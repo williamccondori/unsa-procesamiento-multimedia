@@ -166,14 +166,12 @@ class TestBubbleSort(unittest.TestCase):
         Función que implementa el algoritmo de bubble sort.
         :param numeros: array de números
         """
-        total = len(numeros) - 1
+        total = len(numeros)
         for j in range(0, total):
             ordenado = True
-            for i in range(0, total-j):
+            for i in range(0, total-j-1):
                 if numeros[i] > numeros[i+1]:
-                    temporal = numeros[i]
-                    numeros[i] = numeros[i+1]
-                    numeros[i + 1] = temporal
+                    numeros[i], numeros[i + 1] = numeros[i + 1], numeros[i]
         # print(numeros)
 
     def get_array(self, case, notation):
